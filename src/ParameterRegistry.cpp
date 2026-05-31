@@ -801,11 +801,31 @@ void ParameterRegistry::initialize(Config& config) {
         "Password for accessing the website and authenticating web requests"
     );
 
+    addStringConfigParam(
+        "system.web.logo_url",
+        "Website Logo URL",
+        sSystemSection,
+        1204,
+        nullptr,
+        WEB_LOGO_URL_MAX_LENGTH,
+        "Logo URL shown in the navigation bar (supports absolute URLs and local paths like /img/logo.png)"
+    );
+
+    addStringConfigParam(
+        "system.web.dedication",
+        "Website Dedication",
+        sSystemSection,
+        1205,
+        nullptr,
+        WEB_DEDICATION_MAX_LENGTH,
+        "Optional dedication line shown below the navigation bar"
+    );
+
     addBoolConfigParam(
         "system.offline_mode",
         "Offline Mode",
         sSystemSection,
-        1204,
+        1206,
         nullptr,
         "Disable wifi and start an access point to display the website"
     );

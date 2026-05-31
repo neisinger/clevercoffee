@@ -110,3 +110,6 @@
 #define MQTT_TOPIC_MAX_LENGTH         48
 #define MQTT_HASSIO_PREFIX_MAX_LENGTH 24
 #define HOSTNAME_MAX_LENGTH           64
+#define WEB_LOGO_URL                  "/img/logo.png"
+#define WEB_LOGO_URL_MAX_LENGTH       CONFIG_MAX_URL_LEN
+#define WEB_DEDICATION_MAX_LENGTH     128

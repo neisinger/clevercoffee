@@ -423,6 +423,20 @@ inline void serverSetup() {
         request->send(200, "application/json", helpJson);
     });
 
+    server.on("/webui/customization", HTTP_GET, [](AsyncWebServerRequest* request) {
+        if (!authenticate(request)) {
+            return request->requestAuthentication();
+        }
+
+        JsonDocument doc;
+        doc["logoUrl"] = config.get<String>("system.web.logo_url");
+        doc["dedication"] = config.get<String>("system.web.dedication");
+
+        String customizationJson;
+        serializeJson(doc, customizationJson);
+        request->send(200, "application/json", customizationJson);
+    });
+
     server.on("/temperatures", HTTP_GET, [](AsyncWebServerRequest* request) {
         AsyncResponseStream* response = request->beginResponseStream("application/json");
         response->print('{');

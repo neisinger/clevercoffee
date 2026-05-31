@@ -551,6 +551,18 @@ For each switch type (brew, power, steam):
 - **Max Length**: 64 characters
 - **Description**: Password for accessing webpages
 
+### `system.web.logo_url`
+- **Type**: String
+- **Default**: `"/img/logo.png"`
+- **Max Length**: 128 characters
+- **Description**: Logo URL shown in the web UI navigation bar
+
+### `system.web.dedication`
+- **Type**: String
+- **Default**: `""`
+- **Max Length**: 128 characters
+- **Description**: Optional dedication text shown below the web UI navigation bar
+
 ---
 
 ## Notes
